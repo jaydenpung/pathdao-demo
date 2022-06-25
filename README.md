@@ -4,6 +4,15 @@ This project has been generated using the `aws-nodejs-typescript` template from 
 
 For detailed instructions, please refer to the [documentation](https://www.serverless.com/framework/docs/providers/aws/).
 
+## TLDR
+
+- Run `nvm use`
+- Run `npm install`
+- Change .env.tmp to .env
+- Fill in the variables for .env
+- Run `npm install -g serverless`
+- Run `serverless offline` to start locally
+
 ## Installation/deployment instructions
 
 Depending on your preferred package manager, follow the instructions below to deploy your project.
