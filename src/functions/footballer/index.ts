@@ -18,7 +18,19 @@ export const readFootballer = {
       {
           http: {
               method: 'get',
-              path: 'api/footballer/{id?}',
+              path: 'api/footballer/{id}',
+          },
+      },
+  ],
+};
+
+export const listFootballer = {
+  handler: `${handlerPath(__dirname)}/handler.readFootballerApi`,
+  events: [
+      {
+          http: {
+              method: 'get',
+              path: 'api/footballer',
           },
       },
   ],
