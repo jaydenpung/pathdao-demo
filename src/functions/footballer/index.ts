@@ -30,7 +30,7 @@ export const updateFootballer = {
       {
           http: {
               method: 'patch',
-              path: 'api/footballer/{id?}',
+              path: 'api/footballer/{id}',
           },
       },
   ],
@@ -42,7 +42,7 @@ export const deleteFootballer = {
       {
           http: {
               method: 'delete',
-              path: 'api/footballer/{id?}',
+              path: 'api/footballer/{id}',
           },
       },
   ],
