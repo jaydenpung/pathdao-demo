@@ -29,3 +29,14 @@ export const howdyFootballer = {
       },
   ],
 };
+export const createFootballer = {
+  handler: `${handlerPath(__dirname)}/handler.createFootballerApi`,
+  events: [
+      {
+          http: {
+              method: 'post',
+              path: 'api/createFootballer',
+          },
+      },
+  ],
+};

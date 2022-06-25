@@ -1,7 +1,7 @@
 import type { AWS } from '@serverless/typescript';
 
 import hello from '@functions/hello';
-import {helloFootballer, howdyFootballer} from '@functions/footballer';
+import {helloFootballer, howdyFootballer, createFootballer} from '@functions/footballer';
 
 const serverlessConfiguration: AWS = {
   service: 'pathdao-demo',
@@ -20,7 +20,7 @@ const serverlessConfiguration: AWS = {
     },
   },
   // import the function via paths
-  functions: { hello, helloFootballer, howdyFootballer },
+  functions: { hello, helloFootballer, howdyFootballer, createFootballer },
   package: { individually: true },
   custom: {
     esbuild: {
