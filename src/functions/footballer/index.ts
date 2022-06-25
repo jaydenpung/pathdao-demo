@@ -29,6 +29,7 @@ export const howdyFootballer = {
       },
   ],
 };
+
 export const createFootballer = {
   handler: `${handlerPath(__dirname)}/handler.createFootballerApi`,
   events: [
@@ -40,3 +41,40 @@ export const createFootballer = {
       },
   ],
 };
+
+export const readFootballer = {
+  handler: `${handlerPath(__dirname)}/handler.readFootballerApi`,
+  events: [
+      {
+          http: {
+              method: 'get',
+              path: 'api/readFootballer',
+          },
+      },
+  ],
+};
+
+export const updateFootballer = {
+  handler: `${handlerPath(__dirname)}/handler.updateFootballerApi`,
+  events: [
+      {
+          http: {
+              method: 'post',
+              path: 'api/updateFootballer',
+          },
+      },
+  ],
+};
+
+export const deleteFootballer = {
+  handler: `${handlerPath(__dirname)}/handler.deleteFootballerApi`,
+  events: [
+      {
+          http: {
+              method: 'post',
+              path: 'api/deleteFootballer',
+          },
+      },
+  ],
+};
+
