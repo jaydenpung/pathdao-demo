@@ -1,42 +1,12 @@
-import schema from './schema';
 import { handlerPath } from '@libs/handler-resolver';
-
-export const helloFootballer = {
-  handler: `${handlerPath(__dirname)}/handler.helloFootballerApi`,
-  events: [
-    {
-      http: {
-        method: 'post',
-        path: 'api/helloFootballer',
-        cors: true,
-        request: {
-          schemas: {
-            'application/json': schema,
-          },
-        },
-      },
-    }
-  ],
-};
-export const howdyFootballer = {
-  handler: `${handlerPath(__dirname)}/handler.howdyFootballerApi`,
-  events: [
-      {
-          http: {
-              method: 'post',
-              path: 'api/howdyFootballer',
-          },
-      },
-  ],
-};
 
 export const createFootballer = {
   handler: `${handlerPath(__dirname)}/handler.createFootballerApi`,
   events: [
       {
           http: {
-              method: 'post',
-              path: 'api/createFootballer',
+              method: 'put',
+              path: 'api/footballer',
           },
       },
   ],
@@ -48,7 +18,7 @@ export const readFootballer = {
       {
           http: {
               method: 'get',
-              path: 'api/readFootballer',
+              path: 'api/footballer/{id?}',
           },
       },
   ],
@@ -59,8 +29,8 @@ export const updateFootballer = {
   events: [
       {
           http: {
-              method: 'post',
-              path: 'api/updateFootballer',
+              method: 'patch',
+              path: 'api/footballer/{id?}',
           },
       },
   ],
@@ -71,8 +41,8 @@ export const deleteFootballer = {
   events: [
       {
           http: {
-              method: 'post',
-              path: 'api/deleteFootballer',
+              method: 'delete',
+              path: 'api/footballer/{id?}',
           },
       },
   ],

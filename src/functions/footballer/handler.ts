@@ -8,7 +8,8 @@ import schema from './schema';
 // say hello to footballer
 const helloFootballer: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
   return formatJSONResponse({
-    message: `Hello Footballer ${event.body.name}, age ${event.body.age}`
+    message: `Hello Footballer ${event.body.name}, age ${event.body.age}`,
+    event: event
   });
 };
 export const helloFootballerApi = middyfy(helloFootballer);
@@ -42,8 +43,8 @@ const readFootballer: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async 
   if (event.queryStringParameters?.age) {
     whereClause['age'] = event.queryStringParameters.age;
   }
-  if (event.queryStringParameters?.id) {
-    whereClause['id'] = event.queryStringParameters.id;
+  if (event.pathParameters?.id) {
+    whereClause['id'] = event.pathParameters.id;
   }
   let footballers = await Footballer.findAll({
     where: whereClause
@@ -58,7 +59,7 @@ export const readFootballerApi = middyfy(readFootballer);
 const updateFootballer: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
   let footballer = await Footballer.findOne({
     where: {
-      id: event.body.id
+      id: event.pathParameters.id
     }
   })
 
@@ -81,7 +82,7 @@ export const updateFootballerApi = middyfy(updateFootballer);
 const deleteFootballer: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
   let footballer = await Footballer.findOne({
     where: {
-      id: event.body.id
+      id: event.pathParameters.id
     }
   })
 
